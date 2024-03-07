@@ -12,19 +12,17 @@
     <main>
         <h3>Enter your first and last name</h3>
         <form>
-            <input type="text" id="fName" name="fName">
+            <input type="text" id="fName" name="fName" placeholder="first name">
             <label for="fName">First Name</label>
             <br>
-            <input type="text" id="lName" name="lName">
+            <input type="text" id="lName" name="lName" placeholder="last name">
             <label for="lName">Last Name</label>
             <br>
-            <button type="submit" id="firstNLastButton">Submit</button>
+            <button type="button" id="firstNLastButton" onclick="dispName()">Submit</button>
         </form>
-
-
-
-         
-          
+        <br>
+        <p><span id="firstNameText">firstNametext</span> <span id="lastNameText">lastNameText</span> Inventory</p>
+        
     </main>
 	<script src="script.js"></script>
   </body>
