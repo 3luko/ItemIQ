@@ -11,18 +11,25 @@
   <body style ="background-color: beige;">
     <main>
         <h3>Inventory</h3>
-        <form>
+        <div>
+           <form>
             <input type="text" id="fName" name="fName" placeholder="First name">
-            
             <br>
             <input type="text" id="lName" name="lName" placeholder="Last name">
-            
             <br>
-            <button type="button" id="firstNLastButton" onclick="dispName()">Submit</button>
-        </form>
+          </form>
+        <button type="button" id="firstNLastButton" onclick="dispName()">Submit</button>
+        <button type="button" id="clearButton" onclick="clearDiv()">Clear slots</button>
+        <button type="button" id="boxButton" onclick="createDiv()">Create slot</button>
         <br>
-        <p><span id="firstNameText">firstNametext</span> <span id="lastNameText">lastNameText</span></p>
-        
+        <div>
+          <p><span id="firstNameText"></span> <span id="lastNameText"></span></p>
+        </div>
+        <div id="inventoryContainer">
+          <div id="boxes"> 
+
+          </div>
+        </div>
     </main>
 	<script src="script.js"></script>
   </body>
