@@ -3,7 +3,6 @@ const firstNameText = document.getElementById("firstNameText");
 const lastNameText = document.getElementById("lastNameText");
 var slotNum = 0;
 var showingMenu = false;
-var nameSubmittion = 0;
 
 function dispName(){ //displays the first and last name of the user.
     firstNameText.innerHTML = document.getElementById("fName").value;
