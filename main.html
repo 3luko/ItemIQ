@@ -13,24 +13,25 @@
         <h3>Inventory</h3>
         <div id="mainDiv">
            <form>
-            <input type="text" id="fName" name="fName" placeholder="First name">
-            <br>
-            <input type="text" id="lName" name="lName" placeholder="Last name" >
-            <br>
+            <input type="text" id="fName" name="fName" placeholder="First name" autocomplete="off">
+            <input type="text" id="lName" name="lName" placeholder="Last name" autocomplete="off">
+            <button type="button" id="firstNLastButton" onclick="firstLastSub()">Submit</button>
           </form>
-        <button type="button" id="firstNLastButton" onclick="dispName(); mainSubmit()">Submit</button>
-        <button type="button" id="clearButton" onclick="clearDiv()">Clear slots</button>
-        <button type="button" id="boxButton" onclick="createMenu()">Create slot</button>
+          <div id="createNclear">
+            <button type="button" id="boxButton" onclick="showMenu()">Create slot</button>
+            <button type="button" id="clearButton" onclick="clearDiv()">Clear slots</button>
+          </div>
         </div>
         <br>
-        <div>
-          <p><span id="firstNameText"></span> <span id="lastNameText"></span></p>
-        </div>
-        <div>
-
+        <div id="quickMenu">
+            <input type="text" id="shoeName" placeholder="Name of Shoes"><br>
+            <input type="number" id="shoeSize" placeholder="Size of Shoes"><br>
+            <input type="number" id="shoePrice" placeholder="Price of Shoes"><br>
+            <button type="button" id="submitMenu" onclick="submitMenu()">Submit Slot</button>
+            <button type="button" id="clearMenu" onclick="clearMenu()">Clear Menu</button>
         </div>
         <div id="inventoryContainer">
-          <div id="boxes"> 
+          <div id="boxes">
 
           </div>
         </div>

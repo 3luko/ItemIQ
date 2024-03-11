@@ -1,29 +1,30 @@
 
 const firstNameText = document.getElementById("firstNameText");
 const lastNameText = document.getElementById("lastNameText");
-var slotNum = 1;
-var menuNum = 1;
+var slotNum = 0;
+var showingMenu = false;
+var nameSubmittion = 0;
 
-function dispName(){
+function dispName(){ //displays the first and last name of the user.
     firstNameText.innerHTML = document.getElementById("fName").value;
     lastNameText.innerHTML = document.getElementById("lName").value;
 }
 
 function clearDiv(){ //clears boxes
-    if(slotNum > 1){
+    if(slotNum == 0){
+        alert("No slots have been created!");
+    } else {
+        alert("No slots have been created!");
         let div = document.getElementById("inventoryContainer");
         div.replaceChildren();
         alert("slots will be cleared");
         slotNum = 1;
-    } else {
-        alert("No slots have been created!");
     }
    
 }
 
 function createDiv(){ //creates the slots that show what the user inputed in the menu div
     newObj = document.createElement("div");
-   
     newObj.id = "slot" + slotNum;
     newObj.style.backgroundColor = "red";
     newObj.style.vistibility = "show";
@@ -33,48 +34,45 @@ function createDiv(){ //creates the slots that show what the user inputed in the
     slotNum++;
 }
 
-function createMenu(){ //creates the Menu div using innerHTML, 
-    if(menuNum > 1){
-        alert("Sike!");
-    } else {
-        shoeInput = document.createElement("div");
+function createMenu(){ //Will create slots with information from the menu 
 
-    shoeInput.style.vistibility = "show";
-    shoeInput.id = "quickMenu" + menuNum;
-
-    shoeInput.innerHTML = "<br>";
-    shoeInput.innerHTML += "<input type='text' id='shoeName' placeholder='Name of Shoes'></input>";
-    shoeInput.innerHTML += "<br>";
-    shoeInput.innerHTML += "<input type='number' id='shoeSize' placeholder='Size of Shoes'></input>";
-    shoeInput.innerHTML += "<br>";
-    shoeInput.innerHTML += "<input type='number' id='shoePrice' placeholder='Price of shoes'></input>";
-    shoeInput.innerHTML += "<br>";
-    shoeInput.innerHTML += "<button type='button' id='submitMenu' onclick='submitMenu()'>Submit Slot</button>";
-    shoeInput.innerHTML += "<button type='button' id='clearMenu' onclick='clearMenu()'>Clear Menu</button>";
-    
-    
-    document.getElementById("mainDiv").appendChild(shoeInput);
-    alert("Opening Menu for Shoe Information!");
-    menuNum++;
-
-    }
 }
 
-
 function clearMenu(){ //will clear the menu box on submittion.
-    alert("Menu Cleared!");
-    /*
-        let div = document.getElementById("quickMenu");
-        div.replaceChild();
-        alert("The div has been removed!");
-        menuNum = 1;
-    */
+    document.getElementById("quickMenu").style.display = "none";
+    showingMenu = false;
+    alert("Menu will be cleared!");
 }
 
 function submitMenu(){ //will submit and call the clearMenu() method to clear the menu for the slots
+    document.getElementById("quickMenu").style.display = "none";
+    showingMenu = false;
     alert("Menu Submitted!")
 }
 
-function mainSubmit(){ //user information, will disappaear on submit buttons will remain
-    alert("User Stored");
+function showMenu(){
+    if(!showingMenu){
+        document.getElementById("quickMenu").style.display = "block"
+        alert("Now showing the Menu!");
+        showingMenu = true;
+    } else { //if showing menu is already open 
+        alert("Menu is Open!");
+    }
+    
+}
+
+function firstLastSub(){
+    let first = document.getElementById("fName").value;
+    let last = document.getElementById("lName").value;
+    if(first != "" && last != ""){
+        document.getElementById("fName").style.display = "none";
+        document.getElementById("lName").style.display = "none";
+        document.getElementById("createNclear").style.display = "block";
+        document.getElementById("firstNLastButton").style.display = "none";
+        alert("Hello " + first + " " + last + "!");
+        return true;
+    } else {
+        alert("Please enter your first and last name.");
+        return false;
+    } 
 }
