@@ -38,10 +38,6 @@ function createDiv(){ //creates the slots that show what the user inputed in the
     slotNum++;
 }
 
-function createMenu(){ //Will create slots with information from the menu 
-
-}
-
 function clearMenu(){ //will clear the menu box on submittion.
     document.getElementById("quickMenu").style.display = "none";
     showingMenu = false;
