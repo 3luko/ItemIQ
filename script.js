@@ -17,16 +17,21 @@ function clearDiv(){ //clears boxes
         let div = document.getElementById("inventoryContainer");
         div.replaceChildren();
         alert("slots will be cleared");
-        slotNum = 1;
+        slotNum = 0;
     }  
 }
 
 function createDiv(){ //creates the slots that show what the user inputed in the menu div
     newObj = document.createElement("div");
+    
     newObj.id = "slot" + slotNum;
     newObj.style.backgroundColor = "limegreen";
     newObj.style.vistibility = "show";
-    newObj.innerHTML = (slotNum + 1) ;
+    newObj.style.border = "1px solid black"
+    let shoeName = document.getElementById("shoeName").value;
+    let shoeSize = document.getElementById("shoeSize").value;
+    let shoePrice = document.getElementById("shoePrice").value;
+    newObj.innerHTML = (slotNum + 1) + ".<span style='margin-left : 4em'>" + shoeName + "</span><span style='margin-left : 4em'>Size " + shoeSize + "</span><span style='margin-left : 5em'>$" + shoePrice + "</span>";
     document.getElementById("inventoryContainer").style.display = "block";
     document.getElementById("inventoryContainer").appendChild(newObj);
     alert("Slot " + (slotNum + 1) + " will be added");
