@@ -18,18 +18,18 @@ function clearDiv(){ //clears boxes
         div.replaceChildren();
         alert("slots will be cleared");
         slotNum = 1;
-    }
-   
+    }  
 }
 
 function createDiv(){ //creates the slots that show what the user inputed in the menu div
     newObj = document.createElement("div");
     newObj.id = "slot" + slotNum;
-    newObj.style.backgroundColor = "red";
+    newObj.style.backgroundColor = "limegreen";
     newObj.style.vistibility = "show";
-    newObj.innerHTML = "Slot " + slotNum;
+    newObj.innerHTML = (slotNum + 1) ;
+    document.getElementById("inventoryContainer").style.display = "block";
     document.getElementById("inventoryContainer").appendChild(newObj);
-    alert("Slot " + slotNum + " will be added");
+    alert("Slot " + (slotNum + 1) + " will be added");
     slotNum++;
 }
 
@@ -68,7 +68,7 @@ function firstLastSub(){
         document.getElementById("lName").style.display = "none";
         document.getElementById("createNclear").style.display = "block";
         document.getElementById("firstNLastButton").style.display = "none";
-        alert("Hello " + first + " " + last + "!");
+        alert("Welcome " + first + " " + last + "!");
         return true;
     } else {
         alert("Please enter your first and last name.");
