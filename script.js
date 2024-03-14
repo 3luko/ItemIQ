@@ -3,9 +3,9 @@ const firstNameText = document.getElementById("firstNameText");
 const lastNameText = document.getElementById("lastNameText");
 var slotNum = 0;
 var showingMenu = false;
-var biggershoeName;
-var biggershoeSize;
-var biggershoePrice;
+var biggerName;
+var biggerSize;
+var biggerPrice;
 
 function dispName(){ //displays the first and last name of the user.
     firstNameText.innerHTML = document.getElementById("fName").value;
@@ -25,16 +25,26 @@ function clearDiv(){ //clears boxes
 }
 
 function createDiv(){ //creates the slots that show what the user inputed in the menu div
+    if(document.getElementById("items").value == "shoes"){
+
+    }
     newObj = document.createElement("div");
-    
     newObj.id = "slot" + slotNum;
-    newObj.style.backgroundColor = "limegreen";
+    if(document.getElementById("items").value == "shoes"){
+        newObj.style.backgroundColor = "limegreen"; //indicating it is a shoe
+    } else if(document.getElementById("items").value == "clothes"){
+        newObj.style.backgroundColor = "orange";
+        
+    } else {
+        newObj.style.backgroundColor = "lightblue";
+    }
+    //newObj.style.backgroundColor = "limegreen"; //indicating it is a shoe
     newObj.style.vistibility = "show";
     newObj.style.border = "1px solid black";
-    document.getElementById("shoeName").value = "";
-    document.getElementById("shoeSize").value = "";
-    document.getElementById("shoePrice").value = "";
-    newObj.innerHTML = (slotNum + 1) + ".<span style='margin-left : 4em'>" + biggershoeName + "</span><span style='margin-left : 4em'>Size " + biggershoeSize + "</span><span style='margin-left : 5em'>$" + biggershoePrice + "</span>";
+    document.getElementById("name").value = "";
+    document.getElementById("size").value = "";
+    document.getElementById("price").value = "";
+    newObj.innerHTML = (slotNum + 1) + ".<span style='margin-left : 4em'>" + biggerName + "</span><span style='margin-left : 4em'>Size " + biggerSize + "</span><span style='margin-left : 5em'>$" + biggerPrice + "</span>";
     document.getElementById("inventoryContainer").style.display = "block";
     document.getElementById("inventoryContainer").appendChild(newObj);
     alert("Slot " + (slotNum + 1) + " will be added");
@@ -44,24 +54,30 @@ function createDiv(){ //creates the slots that show what the user inputed in the
 function clearMenu(){ //will clear the menu box on submittion.
     document.getElementById("quickMenu").style.display = "none";
     showingMenu = false;
-    document.getElementById("shoeName").value = "";
-    document.getElementById("shoeSize").value = "";
-    document.getElementById("shoePrice").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("size").value = "";
+    document.getElementById("price").value = "";
+    //document.getElementById("items").value = "shoes";
     alert("Menu will be cleared!");
 }
 
 function submitMenu(){ //will submit and call the clearMenu() method to clear the menu for the slots
     document.getElementById("quickMenu").style.display = "none";
     showingMenu = false;
-    biggershoeName = document.getElementById("shoeName").value;
-    biggershoeSize = document.getElementById("shoeSize").value;
-    biggershoePrice = document.getElementById("shoePrice").value;
+    biggerName = document.getElementById("name").value;
+    biggerSize = document.getElementById("size").value;
+    biggerPrice = document.getElementById("price").value;
     alert("Menu Submitted!")
 }
 
 function showMenu(){
     if(!showingMenu){
-        document.getElementById("quickMenu").style.display = "block"
+        document.getElementById("quickMenu").style.display = "block";
+        /*
+        if(document.getElementById("items").value = "clothes"){
+            document.getElementById("size").type = "text";
+        }
+        */
         alert("Now showing the Menu!");
         showingMenu = true;
     } else { //if showing menu is already open 

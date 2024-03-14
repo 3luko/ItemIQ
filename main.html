@@ -20,13 +20,18 @@
           <div id="createNclear">
             <button type="button" id="boxButton" onclick="showMenu()">Create slot</button>
             <button type="button" id="clearButton" onclick="clearDiv()">Clear slots</button>
+            <select name="options" id="items">
+              <option value="shoes">Shoes</option>
+              <option value="clothes">Clothes</option>
+              <option value="other">Other</option>
+            </select>
           </div>
         </div>
         <br>
         <div id="quickMenu">
-            <input type="text" id="shoeName" placeholder="Name of Shoes"><br>
-            <input type="number" max="14" id="shoeSize" placeholder="Size of Shoes"><br>
-            <input type="number" id="shoePrice" placeholder="Price of Shoes"><br>
+            <input type="text" id="name" placeholder="item name"><br>
+            <input type="text" id="size" placeholder="item size"><br>
+            <input type="number" id="price" placeholder="item price"><br>
             <button type="button" id="submitMenu" onclick="submitMenu(); createDiv()">Submit Slot</button>
             <button type="button" id="clearMenu" onclick="clearMenu()">Clear Menu</button>
         </div>
