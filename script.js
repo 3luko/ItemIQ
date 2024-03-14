@@ -44,6 +44,9 @@ function createDiv(){ //creates the slots that show what the user inputed in the
 function clearMenu(){ //will clear the menu box on submittion.
     document.getElementById("quickMenu").style.display = "none";
     showingMenu = false;
+    document.getElementById("shoeName").value = "";
+    document.getElementById("shoeSize").value = "";
+    document.getElementById("shoePrice").value = "";
     alert("Menu will be cleared!");
 }
 
