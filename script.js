@@ -82,8 +82,7 @@ function showMenu(){
         showingMenu = true;
     } else { //if showing menu is already open 
         alert("Menu is Open!");
-    }
-    
+    }   
 }
 
 function firstLastSub(){
