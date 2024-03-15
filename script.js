@@ -6,6 +6,7 @@ var showingMenu = false;
 var biggerName;
 var biggerSize;
 var biggerPrice;
+var totalAmount = 0;
 
 function dispName(){ //displays the first and last name of the user.
     firstNameText.innerHTML = document.getElementById("fName").value;
@@ -44,7 +45,7 @@ function createDiv(){ //creates the slots that show what the user inputed in the
     document.getElementById("name").value = "";
     document.getElementById("size").value = "";
     document.getElementById("price").value = "";
-    newObj.innerHTML = (slotNum + 1) + ".<span style='margin-left : 4em'>" + biggerName + "</span><span style='margin-left : 4em'>Size " + biggerSize + "</span><span style='margin-left : 5em'>$" + biggerPrice + "</span>";
+    newObj.innerHTML = (slotNum + 1) + ".<span style='margin-left : 4em'>" + biggerName + "</span><span style='margin-left : 4em'>" + biggerSize + "</span><span style='margin-left : 5em'>$" + biggerPrice + "</span>";
     document.getElementById("inventoryContainer").style.display = "block";
     document.getElementById("inventoryContainer").appendChild(newObj);
     alert("Slot " + (slotNum + 1) + " will be added");
@@ -67,6 +68,8 @@ function submitMenu(){ //will submit and call the clearMenu() method to clear th
     biggerName = document.getElementById("name").value;
     biggerSize = document.getElementById("size").value;
     biggerPrice = document.getElementById("price").value;
+    totalAmount += parseInt(biggerPrice);
+    document.getElementById("totalAmount").innerHTML = totalAmount;
     alert("Menu Submitted!")
 }
 
