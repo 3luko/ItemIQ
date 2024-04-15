@@ -20,7 +20,7 @@ function clearDiv(){ //clears boxes
         alert("No slots have been created!");
         let div = document.getElementById("inventoryContainer");
         div.replaceChildren();
-        alert("slots will be cleared");
+       // alert("slots will be cleared");
         slotNum = 0;
     }  
 }
@@ -48,7 +48,7 @@ function createDiv(){ //creates the slots that show what the user inputed in the
     newObj.innerHTML = (slotNum + 1) + ".<span style='margin-left : 4em'>" + biggerName + "</span><span style='margin-left : 4em'>" + biggerSize + "</span><span style='margin-left : 5em'>$" + biggerPrice + "</span>";
     document.getElementById("inventoryContainer").style.display = "block";
     document.getElementById("inventoryContainer").appendChild(newObj);
-    alert("Slot " + (slotNum + 1) + " will be added");
+    //alert("Slot " + (slotNum + 1) + " will be added");
     slotNum++;
 }
 
@@ -59,7 +59,7 @@ function clearMenu(){ //will clear the menu box on submittion.
     document.getElementById("size").value = "";
     document.getElementById("price").value = "";
     //document.getElementById("items").value = "shoes";
-    alert("Menu will be cleared!");
+   // alert("Menu will be cleared!");
 }
 
 function submitMenu(){ //will submit and call the clearMenu() method to clear the menu for the slots
@@ -70,7 +70,7 @@ function submitMenu(){ //will submit and call the clearMenu() method to clear th
     biggerPrice = document.getElementById("price").value;
     totalAmount += parseInt(biggerPrice);
     document.getElementById("totalAmount").innerHTML = totalAmount;
-    alert("Menu Submitted!")
+   // alert("Menu Submitted!")
 }
 
 function showMenu(){
@@ -81,7 +81,7 @@ function showMenu(){
             document.getElementById("size").type = "text";
         }
         */
-        alert("Now showing the Menu!");
+        //alert("Now showing the Menu!");
         showingMenu = true;
     } else { //if showing menu is already open 
         alert("Menu is Open!");
@@ -96,10 +96,15 @@ function firstLastSub(){
         document.getElementById("lName").style.display = "none";
         document.getElementById("createNclear").style.display = "block";
         document.getElementById("firstNLastButton").style.display = "none";
-        alert("Welcome " + first + " " + last + "!");
+        //alert("Welcome " + first + " " + last + "!");
         return true;
     } else {
         alert("Please enter your first and last name.");
         return false;
     } 
 }
+
+function sortingSlotsByPrice(){ //function that will sort the slots by the price
+
+}
+
