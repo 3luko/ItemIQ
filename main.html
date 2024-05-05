@@ -27,7 +27,8 @@
               <option value="clothes">Clothes</option>
               <option value="other">Other</option>
             </select>
-            <span style="margin-left : 7em">Total Amount: <span>$<strong id="totalAmount"></strong></span></span>
+            <span style="margin-left : 7em">Total Amount: <span>$<strong id="totalAmount">0</strong></span></span>
+            <span style="margin-left : 25em"> <button>Sort</button></span>
           </div>
         </div>
         <br>
@@ -35,7 +36,7 @@
             <input type="text" id="name" placeholder="item name"><br>
             <input type="text" id="size" placeholder="item size"><br>
             <input type="number" id="price" placeholder="item price"><br>
-            <button class="btn btn-default" type="button" id="submitMenu" onclick="submitMenu(); createDiv()">Submit Slot</button>
+            <button class="btn btn-default" type="button" id="submitMenu" onclick="submitMenu()">Submit Slot</button>
             <button class="btn btn-default"type="button" id="clearMenu" onclick="clearMenu()">Clear Menu</button>
         </div>
         <div id="inventoryContainer">

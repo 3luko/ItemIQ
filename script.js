@@ -12,16 +12,17 @@ function dispName(){ //displays the first and last name of the user.
     firstNameText.innerHTML = document.getElementById("fName").value;
     lastNameText.innerHTML = document.getElementById("lName").value;
 }
-
 function clearDiv(){ //clears boxes
     if(slotNum == 0){
         alert("No slots have been created!");
     } else {
-        alert("No slots have been created!");
+        alert("Slots will be cleared");
         let div = document.getElementById("inventoryContainer");
         div.replaceChildren();
        // alert("slots will be cleared");
         slotNum = 0;
+        totalAmount = 0;
+        document.getElementById("totalAmount").innerHTML = "0";
     }  
 }
 
@@ -35,7 +36,6 @@ function createDiv(){ //creates the slots that show what the user inputed in the
         newObj.style.backgroundColor = "limegreen"; //indicating it is a shoe
     } else if(document.getElementById("items").value == "clothes"){
         newObj.style.backgroundColor = "orange";
-        
     } else {
         newObj.style.backgroundColor = "lightblue";
     }
@@ -45,6 +45,7 @@ function createDiv(){ //creates the slots that show what the user inputed in the
     document.getElementById("name").value = "";
     document.getElementById("size").value = "";
     document.getElementById("price").value = "";
+    //what is within the div is shown below 
     newObj.innerHTML = (slotNum + 1) + ".<span style='margin-left : 4em'>" + biggerName + "</span><span style='margin-left : 4em'>" + biggerSize + "</span><span style='margin-left : 5em'>$" + biggerPrice + "</span>";
     document.getElementById("inventoryContainer").style.display = "block";
     document.getElementById("inventoryContainer").appendChild(newObj);
@@ -63,6 +64,21 @@ function clearMenu(){ //will clear the menu box on submittion.
 }
 
 function submitMenu(){ //will submit and call the clearMenu() method to clear the menu for the slots
+    if(document.getElementById("name").value == "" &&
+     document.getElementById("size").value == "" &&
+      document.getElementById("price").value == ""){ //if the input value is equal anything it won't run.
+        alert("Please enter your item");
+    } else {
+        document.getElementById("quickMenu").style.display = "none";
+        showingMenu = false;
+        biggerName = document.getElementById("name").value;
+        biggerSize = document.getElementById("size").value;
+        biggerPrice = document.getElementById("price").value;
+        totalAmount += parseInt(biggerPrice);
+        document.getElementById("totalAmount").innerHTML = totalAmount;
+        createDiv();
+    }
+    /*
     document.getElementById("quickMenu").style.display = "none";
     showingMenu = false;
     biggerName = document.getElementById("name").value;
@@ -70,6 +86,7 @@ function submitMenu(){ //will submit and call the clearMenu() method to clear th
     biggerPrice = document.getElementById("price").value;
     totalAmount += parseInt(biggerPrice);
     document.getElementById("totalAmount").innerHTML = totalAmount;
+    */
    // alert("Menu Submitted!")
 }
 
