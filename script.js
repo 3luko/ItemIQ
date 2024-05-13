@@ -64,11 +64,13 @@ function clearMenu(){ //will clear the menu box on submittion.
 }
 
 function submitMenu(){ //will submit and call the clearMenu() method to clear the menu for the slots
-    if(document.getElementById("name").value == "" &&
-     document.getElementById("size").value == "" &&
-      document.getElementById("price").value == ""){ //if the input value is equal anything it won't run.
+    if(document.getElementById("name").value == ""){ //if the input value is equal anything it won't run.
         alert("Please enter your item");
-    } else {
+    } else if(document.getElementById("price").value == ""){
+        alert("Enter Price amount");
+    } else if(document.getElementById("size").value == ""){
+        alert("Enter size");
+    }else {
         document.getElementById("quickMenu").style.display = "none";
         showingMenu = false;
         biggerName = document.getElementById("name").value;
@@ -122,6 +124,7 @@ function firstLastSub(){
 }
 
 function sortingSlotsByPrice(){ //function that will sort the slots by the price
+
 
 }
 
