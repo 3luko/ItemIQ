@@ -124,7 +124,5 @@ function firstLastSub(){
 }
 
 function sortingSlotsByPrice(){ //function that will sort the slots by the price
-
-
+    
 }
-
