@@ -4,14 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>ItemIQ</title>
+    <link rel="stylesheet" href="./styles.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
   </head>
-  <body>
+  <body style ="background-color: beige;">
+    <div class="container-fluid">
     <main>
-        <h1>Welcome to My Website</h1>  
+        <h3>ItemIQ</h3>
+        <div id="mainDiv">
+           <form>
+            <input type="text" id="username" name="username" placeholder="Username..." autocomplete="off">
+            <input type="password" id="lName" name="lName" placeholder="Password" autocomplete="off">
+            <button class="btn btn-default" type="button" id="firstNLastButton" onclick="firstLastSub()">Submit</button>
+          </form>
+          <div id="createNclear">
+            <button type="button" id="boxButton" onclick="showMenu()">Create slot</button>
+            <button type="button" id="clearButton" onclick="clearDiv()">Clear slots</button>
+            <select name="options" id="items">
+              <option value="shoes">Shoes</option>
+              <option value="clothes">Clothes</option>
+              <option value="other">Other</option>
+            </select>
+            <span style="margin-left : 7em">Total Amount: <span>$<strong id="totalAmount">0</strong></span></span>
+            <span style="margin-left : 25em"> <button>Sort</button></span>
+          </div>
+        </div>
+        <br>
+        <div id="quickMenu">
+            <input type="text" id="name" placeholder="item name"><br>
+            <input type="text" id="size" placeholder="item size"><br>
+            <input type="number" id="price" placeholder="item price"><br>
+            <button class="btn btn-default" type="button" id="submitMenu" onclick="submitMenu()">Submit Slot</button>
+            <button class="btn btn-default"type="button" id="clearMenu" onclick="clearMenu()">Clear Menu</button>
+        </div>
+        <div id="inventoryContainer">
+          <!--<p><span id="dispName" style="margin-left: 5em">Name</span><span id="dispSize" style="margin-left: 5em">Size</span><span id="dispPrice" style="margin-left : 5em">Price</span></p> -->
+        </div>
     </main>
-	<script src="index.js"></script>
+    </div>
+	<script src="script.js"></script>
   </body>
 </html>
