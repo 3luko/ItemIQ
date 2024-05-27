@@ -1,3 +1,13 @@
-#quickMenu, #createNclear, #inventoryContainer {
+#quickMenu, #inventoryContainer #loginSystem{
     display : none;
 }
+
+#createNclear {
+    display : block;
+}
+
+.mainMenuDiv{
+    
+}
+
+

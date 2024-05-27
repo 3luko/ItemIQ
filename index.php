@@ -17,8 +17,9 @@
         <input type="text" name="username" placeholder="Username">
         <br>
         <input type="password" name="pwd" placeholder="Password">
-        <button>Login</button
+        <button>Login</button>
     </form>
 	
+    <script src="script.js"></script>
   </body>
 </html>

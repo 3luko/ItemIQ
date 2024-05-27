@@ -108,19 +108,32 @@ function showMenu(){
 }
 
 function firstLastSub(){
+    /*
+        document.getElementById("fName").style.display = "none";
+        document.getElementById("lName").style.display = "none";
+        */
+        document.getElementById("createNclear").style.display = "block";
+        document.getElementById("firstNLastButton").style.display = "none";
+        return true;
+    /*
     let first = document.getElementById("fName").value;
     let last = document.getElementById("lName").value;
-    if(first != "" && last != ""){
+    
+    if(first != "" && last != ""){ //if the first and last name fields are empty
+        
         document.getElementById("fName").style.display = "none";
         document.getElementById("lName").style.display = "none";
         document.getElementById("createNclear").style.display = "block";
         document.getElementById("firstNLastButton").style.display = "none";
         //alert("Welcome " + first + " " + last + "!");
         return true;
+        
     } else {
         alert("Please enter your first and last name.");
         return false;
     } 
+    */
+    
 }
 
 function sortingSlotsByPrice(){ //function that will sort the slots by the price
